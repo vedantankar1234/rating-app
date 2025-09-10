@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Listings - Rating App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Store Listings</h1>
+    <p id="welcomeTextUser"></p>
+
+    <input type="text" id="searchStore" placeholder="Search by name or address" onkeyup="searchStores()">
+
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Store Name</th>
+          <th>Address</th>
+          <th>Overall Rating</th>
+          <th>Your Rating</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="storeTable"></tbody>
+    </table>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+<!-- ===== Rating Section ===== -->
+<h3>Rate a Store</h3>
+<form id="ratingForm">
+  <select id="storeSelect" required>
+    <option value="">Select store</option>
+    <!-- JS will populate store list -->
+  </select>
+  <input type="number" id="ratingValue" min="1" max="5" placeholder="Rate 1-5" required />
+  <input type="text" id="comment" placeholder="Write a comment (optional)" />
+  <button type="submit">Submit Rating</button>
+</form>
+
+<h3>My Ratings</h3>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Rating</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody id="ratingsTable"></tbody>
+</table>
+<!-- ========================== -->
+
+  <script src="script.js"></script>
+</body>
+</html>

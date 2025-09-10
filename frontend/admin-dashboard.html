@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Rating App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <p id="welcomeText"></p>
+
+    <h2>Statistics</h2>
+    <ul>
+      <li>Total Users: <span id="totalUsers">0</span></li>
+      <li>Total Stores: <span id="totalStores">0</span></li>
+      <li>Total Ratings: <span id="totalRatings">0</span></li>
+    </ul>
+
+    <h2>Add New User</h2>
+    <form id="addUserForm">
+      <input type="text" id="newName" placeholder="Full Name" required>
+      <input type="email" id="newEmail" placeholder="Email" required>
+      <input type="text" id="newAddress" placeholder="Address" required>
+      <input type="password" id="newPassword" placeholder="Password" required>
+      <select id="newRole" required>
+        <option value="user">Normal User</option>
+        <option value="owner">Store Owner</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Add User</button>
+    </form>
+
+    <h2>Users List</h2>
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th><th>Role</th>
+        </tr>
+      </thead>
+      <tbody id="usersTable"></tbody>
+    </table>
+
+    <h2>Stores List</h2>
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Name</th><th>Email</th><th>Address</th><th>Rating</th>
+        </tr>
+      </thead>
+      <tbody id="storesTable"></tbody>
+    </table>
+
+    <!-- Add Store -->
+<h3>Add Store</h3>
+<form id="addStoreForm">
+  <input id="newStoreName" placeholder="Store name" required />
+  <input id="newStoreAddress" placeholder="Store address" required />
+  <select id="storeOwnerSelect" required>
+    <option value="">Select owner</option>
+    <!-- options populated by JS -->
+  </select>
+  <button type="submit">Add Store</button>
+</form>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

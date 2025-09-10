@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Rating App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <form id="signupForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required minlength="20" maxlength="60">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" maxlength="400"></textarea>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" 
+             required minlength="8" maxlength="16"
+             pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*]).+$"
+             title="Password must have at least 1 uppercase and 1 special character">
+
+      <label for="role">Role:</label>
+      <select id="role" required>
+        <option value="user">Normal User</option>
+        <option value="owner">Store Owner</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="index.html">Login here</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
